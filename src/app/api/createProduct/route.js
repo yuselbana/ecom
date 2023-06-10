@@ -6,16 +6,21 @@ import Stripe from 'stripe';
 export async function GET() {
   try {
   
-    const stripe = new Stripe('sk_test_51NGQlkDN9XLOVjsUk82M8raD35RyGiL9RceWr4bjDlfYx3iRzqeQNsjLfyldxI6GTQbaS4GOv514JxG08loz9ALW004PyrZFFl');  
+    const stripe = new Stripe('sk_test_51NHVvrFNO59KTQh9guEsuWHUfurXw4mZKh8RVeKUj0eqF9CP0Weanx6Ei0yXMBSGHpe507MwXc3X4g9cLkat52j300MCj53zQY');  
+    //Contains the products being newly added
     const productArray=[];
+
+  //get product list 
    const listProducts = async() => {
     let products = await stripe.products.list({
       limit:100
     })
     return products.data.reverse()
    }
+   //reverse list in order to match with static data.json, will also show all products in stripe array
  var reverseProducts =  await listProducts();
 
+//if the shop products is 0, start to map data.json to the stripe products 
 if(reverseProducts.length ===0) {
   for(var i =0;i<data.length;i++) {
     let product =await stripe.products.create({
@@ -25,9 +30,12 @@ if(reverseProducts.length ===0) {
   })
   productArray.push(product);
   reverseProducts = await listProducts();
-  }
-}else {
+  console.log('Added New Product: ' + data[i].title)
 
+  }
+  console.log("Shop now has " + reverseProducts.length + ' products')
+}else {
+        //check if new product was added, if so populate the stripe product array with the newly added object from data.js 
     for(var j=0;j<data.length;j++) {
         if(reverseProducts[j] === undefined) {
            let product =await stripe.products.create({
@@ -40,7 +48,7 @@ if(reverseProducts.length ===0) {
            console.log("Added new product: "+ data[j].title)
          
           }else if(data[j].title === reverseProducts[j].name ) {
-            console.log("Product Already Created")
+            // console.log("Product: " + data[j].title + ", Already Created" )
           }
         }
   
@@ -49,7 +57,7 @@ if(reverseProducts.length ===0) {
       
      
   }
-  
+  //unable to delete products in stripe if active={true}(purchasable). 
 
 
 

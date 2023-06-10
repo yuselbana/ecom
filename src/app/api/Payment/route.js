@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 export async function POST(request) {
     
-    const stripe = new Stripe('sk_test_51NGQlkDN9XLOVjsUk82M8raD35RyGiL9RceWr4bjDlfYx3iRzqeQNsjLfyldxI6GTQbaS4GOv514JxG08loz9ALW004PyrZFFl')
+    const stripe = new Stripe('sk_test_51NHVvrFNO59KTQh9guEsuWHUfurXw4mZKh8RVeKUj0eqF9CP0Weanx6Ei0yXMBSGHpe507MwXc3X4g9cLkat52j300MCj53zQY')
     let data = await request.json();
     let priceId = data.priceId
     const session = await stripe.checkout.sessions.create({

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--ubuntu);
+}
+:root {
+    --ubuntu:'Ubuntu', sans-serif;
+    --playfair:'Playfair Display', serif;
+    --blue:#3898EC;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.navbar_container {
+    color: white;
+    
+    background-color: #3898EC;
+    backdrop-filter: blur(15px);
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.flex_row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
