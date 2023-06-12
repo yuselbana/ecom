@@ -96,7 +96,13 @@
 }
 .in_stock {
     background-color: #DCFCE7;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+.prod_id {
+    background-color: grey;
+    color: white;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 @media screen and (width<=800px) {

@@ -18,7 +18,7 @@ export default function CategoryPage() {
 
     <div className={styles.category_page_container}>
     <div className={styles.title}>
-    <h2>Shop by category</h2>
+    <h1>Shop by category</h1>
     </div>
     <div className={styles.shop_category}>
     
@@ -39,8 +39,8 @@ export default function CategoryPage() {
             </section>
             </Link>
 
-            
-            <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
+           
+            <Link href={{pathname:'/Appliances', query:{products:'Appliances'}}} >
               
             <section className={styles.category}>
                 <h1>Appliances</h1>
@@ -49,56 +49,36 @@ export default function CategoryPage() {
             </Link>
 
             
-            <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
+            <Link href={{pathname:'/Footwear', query:{products:'Footwear'}}} >
+              
+              <section className={styles.category}>
+                  <h1>Footwear</h1>
+                  <Image src={footwear}/>
+              </section>
+              </Link>
+   
+              <Link href={{pathname:'/Sports', query:{products:'Sports'}}} >
+              
+              <section className={styles.category}>
+                  <h1>Sports</h1>
+                  <Image src={sports}/>
+              </section>
+              </Link>
+  
+
+
+            <Link href={{pathname:'/Decor', query:{products:'Decor'}}} >
               
              <section className={styles.category}>
-                <h1>Plants</h1>
+                <h1>Decor</h1>
                 <Image src={plants}/>
             </section>
             </Link>
 
             
-            <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
-              
-            <section className={styles.category}>
-                <h1>Footwear</h1>
-                <Image src={footwear}/>
-            </section>
-            </Link>
-
-            
-            <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
-              
-            <section className={styles.category}>
-                <h1>Sports</h1>
-                <Image src={sports}/>
-            </section>
-            </Link>
-
-            {/* <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
-              
-              <section className={styles.category}>
-                  <h1>Something</h1>
-                  <Image src={}/>
-              </section>
-              </Link>
-
-              <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
-              
-              <section className={styles.category}>
-                  <h1>Something</h1>
-                  <Image src={}/>
-              </section>
-              </Link>
-
-              <Link href={{pathname:'/Electronics', query:{products:'Electronics'}}} >
-              
-              <section className={styles.category}>
-                  <h1>Something</h1>
-                  <Image src={}/>
-              </section>
-              </Link>
-     */}
+         
+           
+           
         
     
 

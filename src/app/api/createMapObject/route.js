@@ -3,14 +3,19 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import data from "@/app/data/data";
 export async function GET() {
-const stripe = new Stripe('sk_test_51NHVvrFNO59KTQh9guEsuWHUfurXw4mZKh8RVeKUj0eqF9CP0Weanx6Ei0yXMBSGHpe507MwXc3X4g9cLkat52j300MCj53zQY');
+const stripe = new Stripe('sk_test_51NHsuSK0bwgce0yttZmSkFHczAih2XrSLkrcDcqcexh24rnbm63afqcxouxItxu4f10pPbYsRmjfm05LCQyZaMeP00OI0dOxOZ');
 const prices = await stripe.prices.list({
     limit:100
 })
 
+const products = await stripe.products.list({
+    limit:100
+})
+
+const rawProducts = products.data.reverse();
 const rawPrices = prices.data.reverse();
 const mapObject = data.map((product,index) => {
-    return {id:product.id, title:product.title, image:product.image, price:product.price,category:product.category, description:product.description, priceId: rawPrices[index].id}
+    return {id:product.id, title:product.title, image:product.image, price:product.price,category:product.category, description:product.description, priceId: rawPrices[index].id,prodId: rawProducts[index].id}
 })
 
 return NextResponse.json(mapObject)

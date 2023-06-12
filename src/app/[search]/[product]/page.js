@@ -16,6 +16,15 @@ export default function ProductModal () {
         setIcon( <Unicons.UilMobileAndroid color='#3898EC'/>)
     }else if(product.category ==='Furniture') {
         setIcon( <Unicons.UilLamp color='#3898EC'/>)
+    }else if(product.category ==='Appliances') {
+        setIcon( <Unicons.UilRestaurant color='#3898EC'/>)
+    }else if (product.category === 'Footwear') {
+        setIcon(<Unicons.UilStore color='#3898EC'/>)
+    }else if (product.category === 'Sports') {
+        setIcon(<Unicons.UilFootball color='#3898EC'/>)
+    }else if (product.category === 'Decor') {
+        setIcon(<Unicons.UilPagelines color='#3898EC'/>) 
+
     }
 
    }
@@ -80,20 +89,24 @@ export default function ProductModal () {
                      <h3> ${product.price}</h3>
                      <button onClick={handlePurchase}>Buy Now</button>
                 <Unicons.UilShoppingCart color='#3898EC' size='40'/>
-           
+                    </section>
+
+                  <div className={styles.price_button}>
+                  <section className={styles.prod_id}>
+                    {product.prodId}
                     </section>
                     <section className={styles.in_stock}>
                         <p>In-stock</p>
                     </section>
+                  </div>
                    </div>
 
-                    {/* <div>
-                        <p><strong>Shipping and Returns</strong></p>
-                        <p>Standard shipping: 3 - 5 working days. Express shipping: 1 - 3 working days. <br/>
-                        Shipping costs depend on delivery address and will be calculated during checkout. <br/>
-                        Returns are subject to terms. Please see the returns page for further information.</p>
-                    </div> */}
+                    
                     </div>
+                    
+
+               
+
                  </div>
 
                     </div>

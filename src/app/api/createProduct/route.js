@@ -6,7 +6,7 @@ import Stripe from 'stripe';
 export async function GET() {
   try {
   
-    const stripe = new Stripe('sk_test_51NHVvrFNO59KTQh9guEsuWHUfurXw4mZKh8RVeKUj0eqF9CP0Weanx6Ei0yXMBSGHpe507MwXc3X4g9cLkat52j300MCj53zQY');  
+    const stripe = new Stripe('sk_test_51NHsuSK0bwgce0yttZmSkFHczAih2XrSLkrcDcqcexh24rnbm63afqcxouxItxu4f10pPbYsRmjfm05LCQyZaMeP00OI0dOxOZ');  
     //Contains the products being newly added
     const productArray=[];
 
@@ -69,6 +69,6 @@ return NextResponse.json(
     productArray:productArray
   })
   } catch (error) {
-    
+    console.error(error)
   }
 }

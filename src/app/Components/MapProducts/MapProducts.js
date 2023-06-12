@@ -20,7 +20,12 @@ const MapProducts = (props) => {
   }, []);
   
   const createProduct = async()=>{
-  await axios.get('/api/createProduct')
+    //only need to run if adding more products can be run simateousnly, performance hinders.
+
+    ////////
+  // await axios.get('/api/createProduct')
+    ///////
+        //api route /api/createMapObject is what is used to map the products, passing in the priceID to create a checkout session.
       const data = await axios.get('/api/createMapObject')
       setProducts(await data.data)
   }
@@ -50,10 +55,18 @@ const MapProducts = (props) => {
               <p>Furniture</p>
               </Link>
       
-      <p>Appliances</p>
-      <p>Plants</p>
-      <p>Footwear</p>
-      <p>Sports</p>
+              <Link href={{pathname:'/Appliances', query:{products:'Appliances'}}} >
+              <p>Appliances</p>
+              </Link>
+              <Link href={{pathname:'/Footwear', query:{products:'Footwear'}}} >
+              <p>Footwear</p>
+              </Link>
+              <Link href={{pathname:'/Sports', query:{products:'Sports'}}} >
+              <p>Sports</p>
+              </Link>
+              <Link href={{pathname:'/Decor', query:{products:'Decor'}}} >
+              <p>Decor</p>
+              </Link>
       </section>
 
       
