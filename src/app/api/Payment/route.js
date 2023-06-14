@@ -14,8 +14,9 @@ export async function POST(request) {
             }
         ],
         mode: 'payment',
-        success_url:'https://localhost:3000',
-        cancel_url:'https://localhost:3000'
+        //doesnt work in development, need "real" url
+        success_url:'https://ecom-yuselbana.vercel.app/Success',
+        cancel_url:'https://ecom-yuselbana.vercel.app/Error'
     })
         return NextResponse.json(session.url);
 }
