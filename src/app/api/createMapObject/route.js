@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import data from "@/app/data/data";
 export async function GET() {
-const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
+const stripe = new Stripe(process.env.NEXT_STRIPE_PRIVATE_KEY);
 
 const prices = await stripe.prices.list({
     limit:100

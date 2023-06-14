@@ -6,7 +6,7 @@ import Stripe from 'stripe';
 export async function GET() {
   try {
   
-    const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);  
+    const stripe = new Stripe(process.env.NEXT_STRIPE_PRIVATE_KEY);  
     //Contains the products being newly added
     const productArray=[];
 
