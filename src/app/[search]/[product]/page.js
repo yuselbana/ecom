@@ -7,9 +7,12 @@ import axios from "axios";
 import Image from "next/image";
 import * as Unicons from '@iconscout/react-unicons';
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { MoonLoader } from "react-spinners";
 export default function ProductModal () {
     const [product,setProduct] = useState({})
     const [icon,setIcon ] = useState()
+    const [loading,setLoading] = useState(false)
   
    const iconHandler = ()=> {
     if(product.category === 'Electronics') {
@@ -37,6 +40,7 @@ export default function ProductModal () {
         for (var i =0; i< await products.length;i++) {
             if( await products[i].title === prod) {
                 setProduct( await products[i])
+                setLoading(!loading)
             }
         }
     }
@@ -60,27 +64,36 @@ export default function ProductModal () {
             return (
                     <div className={styles.modal_container}> 
                    
-                 <div  className={styles.modal_grid}>
+                {loading?   <div  className={styles.modal_grid}>
                  <div className={styles.back_image}>
 
                
                 <section className={styles.flex_row}>
                 <Link href={{pathname:`/${product.category}`, query:{products:`${product.category}`}}}>
               
-                 <h3> {icon} / Back to {product.category}</h3>
+                 <p> {icon} / Back to {product.category}</p>
                  </Link>
                  </section>
            
 
                  <section className={styles.image_container}>
-              <Image src={product.image} fill={true}/>
+              <motion.img src={product.image} fill={true}
+                initial={{x:-50,opacity:0.25}}
+                animate={{x:0,opacity:1}}
+                transition={{duration:1}}  
+
+              />
               </section>
 
 
                  </div>
                 
 
-                    <div className={styles.flex_col}>
+                    <motion.div className={styles.flex_col}
+                    initial={{x:50,opacity:0.5}}
+                    animate={{x:0,opacity:1}}   
+                    transition={{duration:1}}  
+                    >
 
                    <div className={styles.desc_pricing}>
                    <p>{product.description}</p>
@@ -88,12 +101,11 @@ export default function ProductModal () {
                     <section className={styles.price_button}>
                      <h3> ${product.price}</h3>
                      <button onClick={handlePurchase}>Buy Now</button>
-                <Unicons.UilShoppingCart color='#3898EC' size='40'/>
                     </section>
 
                   <div className={styles.price_button}>
                   <section className={styles.prod_id}>
-                    {product.prodId}
+                    <p>ID: {product.prodId}</p>
                     </section>
                     <section className={styles.in_stock}>
                         <p>In-stock</p>
@@ -102,12 +114,12 @@ export default function ProductModal () {
                    </div>
 
                     
-                    </div>
+                    </motion.div>
                     
 
                
 
-                 </div>
+                 </div>: <MoonLoader color='#3898EC'/>}
 
                     </div>
             )

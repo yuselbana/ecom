@@ -2,6 +2,8 @@ import styles from './ProductComponent.module.css'
 import Image from 'next/image'
 import axios from 'axios'
 import Link from 'next/link'
+import { motion,AnimatePresence } from 'framer-motion'
+import { MoonLoader } from 'react-spinners'
 const ProductComponent = (props) => {
 
     const handlePurchase = async(e) => {
@@ -16,12 +18,22 @@ const ProductComponent = (props) => {
       <>
             {props.category ===props.product.category ?
 
-      <Link href={{pathname:`/Products/${props.product.title}`, query:{product:`${props.product.title}`}}}>
-    
-        
-            <div className={styles.product_component}>   
+            <>
+          {props.loading ? 
+          
+            <Link href={{pathname:`/Products/${props.product.title}`, query:{product:`${props.product.title}`}}}>
+            <motion.div className={styles.product_component}
+            initial={{opacity:0.25}}
+            animate={{opacity:1}}   
+            transition={{duration:0.25}}  
+            >   
        <div className={styles.img}>
-       <Image src={props.product.image}  fill={true} />
+
+       <motion.img src={props.product.image}  fill={true} 
+       initial={{opacity:0.25}}
+       animate={{opacity:1}}
+       transition={{duration:1}}  
+       />
        </div>
      <div className={styles.flex_row}>
      <section className={styles.name_price}>
@@ -31,8 +43,18 @@ const ProductComponent = (props) => {
      <button onClick={handlePurchase}>Buy Now</button>
      </div>
            
-        </div>
+        </motion.div>
         </Link>
+
+        :
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <MoonLoader color='#3898EC'/>
+          </div>
+          
+          }
+
+
+           </>
         :
         ''
         }

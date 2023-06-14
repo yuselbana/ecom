@@ -16,7 +16,7 @@ export default function CategoryPage() {
 
   return (
 
-    <div className={styles.category_page_container}>
+    <div id='categories' className={styles.category_page_container}>
     <div className={styles.title}>
     <h1>Shop by category</h1>
     </div>

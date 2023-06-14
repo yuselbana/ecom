@@ -1,7 +1,7 @@
 .navbar_container {
     color: white;
     
-    background-color: #3898EC;
+    background-color: var(--blue);
     backdrop-filter: blur(15px);
 
     position: sticky;
@@ -18,4 +18,42 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+
+
+.sidebar_container {
+
+    min-height: 100vh;
+    width: 25vw;
+    position: fixed;
+    right: 0;
+    background-color: var(--blue);
+display: grid;
+grid-template-rows: 0.60fr 0.40fr;
+place-items: center;
+}
+.flex_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white ;
+    gap: 2rem;
+}
+.flex_col h3 {
+    color: white;
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+@media screen and (width<=1200px) {
+    .sidebar_container {
+        position: sticky;
+        width: 100vw;
+        overflow: hidden;
+    }
 }

@@ -1,100 +1,30 @@
-@media screen and (width<=900px) {
-    .footer_container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 0.25fr;
-    height: fit-content;
-
-    }
-    .bottom {
-        grid-row: 3/4;
-        display: flex;
-        
-    }
-    .footer_params {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        gap: 4rem;
-        padding: 2rem 0rem;
-    }
-    
-    }
-    
-     @media screen and (width>=900px) {
-        .footer_container {
-            grid-template-rows: 0.75fr 0.25fr;
-            grid-template-columns: repeat(3,1fr);
-              height: 45vh;
-            }
-        
-            
-            .bottom {
-                border-top: 1px solid #454545;
-                grid-row: 2/4;
-                grid-column: 1/4;
-                height: 100%;
-             
-            }
-            .footer_params {
-                width: 100%;
-              grid-column: 2/4;
-              display: flex;
-            justify-content: space-around;
-            align-items: center;
-            }
-            
-          
-    
-     }
-     .footer_col {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-      
-    }
-     .bottom {
-        border-top: 1px solid #454545;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-right: 2rem;
-     }
-    
-     .footer_container {
-        display: grid;
-        background-color: #3898EC;
-        color: white;
-        font-family: var(--metro);
-      
-     
-     }
-    
-     .footer_col h3 {
-        color: white;
-        letter-spacing: 2px;
-        font-weight: 200;
-    }
-    .footer_col p {
-        color:var(--h3)
-    
-    }
-    .logo_socials {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction:column ;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        padding: 2rem;
-    }
-    .socials {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-    }
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--blue);
+    color: white;
+    gap: 2rem;
+    padding: 2rem;
+}
+.logo_socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.bottom {
+    border-top: 0.5px solid pink;
+    width:100%;
+   padding-top: 2rem;
+    text-align: center;
+}

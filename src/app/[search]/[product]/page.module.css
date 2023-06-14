@@ -33,11 +33,12 @@
     padding: 1rem 0rem;
 
 }
-.flex_row h3 {
+.flex_row p {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    color: #ADAAA8;
 }
 
 .image_container {
