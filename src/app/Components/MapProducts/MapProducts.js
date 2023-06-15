@@ -108,7 +108,7 @@ const CategoryDropDown = () => {
         
         {products?.map(product => {
          return (
- <ProductComponent loading={loading} key={product.id} category={category}  product={product}/>
+ <ProductComponent  loading={loading} key={product.id} category={category}  product={product}/>
         )
         })}
 

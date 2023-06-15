@@ -13,7 +13,7 @@ const Hero =  () => {
         transition={{duration:0.5}}
         >
         <div className={styles.img_container}>
-        <Image src={hero}/>
+        <Image alt='Hero Pink Rose' src={hero}/>
         </div>
             <div className={styles.flex_row_col}>
            

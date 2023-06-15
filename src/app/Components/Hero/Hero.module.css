@@ -68,7 +68,7 @@
     width: 100%;
     height: 100%;
 }
-@media screen and (width>=1200px) {
+@media screen and (width>=900px) {
     .hero_text h1 {
         font-size: 4rem;
         letter-spacing: 4px;
@@ -80,14 +80,14 @@
     }
     
 }
-@media screen and (width<=1200px) {
+@media screen and (width<=900px) {
     .flex_row_col {
         flex-direction: column;
     }
     
     .hero_text h1 {
-        padding: 1rem;
-        font-size: 4rem;
+     
+        font-size: 2.9rem;
     }
     .hero_text h3 {
         text-align: center;

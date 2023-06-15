@@ -4,7 +4,7 @@ import { MoonLoader } from 'react-spinners'
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 const RedirectPage = (props) => {
-    const [timer,setTimer] = useState(10)   
+    const [timer,setTimer] = useState(5)   
     const router = useRouter()
     useEffect(() => {
         if(timer > 0) {

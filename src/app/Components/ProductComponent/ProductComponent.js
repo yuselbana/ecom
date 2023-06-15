@@ -29,7 +29,7 @@ const ProductComponent = (props) => {
             >   
        <div className={styles.img}>
 
-       <motion.img src={props.product.image}  fill={true} 
+       <motion.img alt={props.product.title} src={props.product.image}  fill={true} 
        initial={{opacity:0.25}}
        animate={{opacity:1}}
        transition={{duration:1}}  

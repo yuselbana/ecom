@@ -12,6 +12,7 @@ export async function POST(request) {
                 price:priceId,
                 quantity:1,
             }
+        
         ],
         mode: 'payment',
         //doesnt work in development, need "real" url

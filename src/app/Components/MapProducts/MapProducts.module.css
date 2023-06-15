@@ -29,10 +29,10 @@ gap: 5rem;
 padding-top: 2rem;
 
 }
-.flex_col h1 {
+.home_category h1 {
    text-transform: uppercase;
    letter-spacing: 4px;
-   font-size: 3.5rem;
+
    color: var(--blue);
 }
 .categories {
@@ -91,6 +91,9 @@ padding-top: 2rem;
    .product_page_container {
       grid-template-columns: 0.25fr 0.75fr;
    }
+   .home_category h1 {
+      font-size: 3.5rem;
+   }
 }
 @media screen and (900px<= width<=1200px) {
    .product_page_container {
@@ -100,6 +103,9 @@ padding-top: 2rem;
       flex-direction: row;
      
       height: 100%;
+   }
+   .home_category h1 {
+      font-size: 2.5rem;
    }
 }
 @media screen and (width<=900px) {
@@ -116,5 +122,7 @@ padding-top: 2rem;
    .categories {
       align-items: center;
    }
-   
+   .home_category h1 {
+      font-size: 2.5rem;
+   }
 }
